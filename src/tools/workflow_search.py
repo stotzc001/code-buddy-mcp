@@ -287,7 +287,7 @@ class WorkflowSearcher:
         """
         query = """
             SELECT 
-                id, name, title, description, content,
+                id, name, title, description, overview,
                 category, subcategory, tags, technologies,
                 complexity, estimated_time_minutes,
                 use_cases, prerequisites, problem_statement,
@@ -308,7 +308,7 @@ class WorkflowSearcher:
                 "name": row[1],
                 "title": row[2],
                 "description": row[3],
-                "content": row[4],
+                "content": row[4],  # Database column is 'overview' but we return as 'content'
                 "category": row[5],
                 "subcategory": row[6],
                 "tags": row[7] or [],
